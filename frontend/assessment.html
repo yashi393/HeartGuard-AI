@@ -1,0 +1,692 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+    <title>HeartGuard AI - Assessment</title>
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="css/responsive.css">
+
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+
+</head>
+
+<body>
+
+<!-- ========================= -->
+<!-- NAVBAR -->
+<!-- ========================= -->
+
+<nav class="navbar">
+
+    <div class="logo">
+        <i class="fa-solid fa-heart-pulse"></i>
+        HeartGuard AI
+    </div>
+
+    <ul class="nav-links">
+
+        <li><a href="index.html">Home</a></li>
+
+        <li><a href="index.html#about">About</a></li>
+
+        <li><a href="index.html#guide">Education</a></li>
+
+        <li><a href="assessment.html" class="active">Assessment</a></li>
+
+        <li><a href="index.html#analysis">Analysis</a></li>
+
+        <li><a href="index.html#conclusion">Conclusion</a></li>
+
+    </ul>
+
+</nav>
+
+<!-- ========================= -->
+<!-- PAGE HERO -->
+<!-- ========================= -->
+
+<section class="assessment-hero">
+
+    <div class="assessment-hero-content">
+
+        <span class="assessment-badge">
+            AI Powered Cardiovascular Screening
+        </span>
+
+        <h1>
+            Heart Disease Risk Assessment
+        </h1>
+
+        <p>
+            Complete a clinical-style health evaluation and receive
+            an AI-powered cardiovascular risk report generated from
+            medically relevant health indicators.
+        </p>
+
+    </div>
+
+</section>
+
+<!-- PROGRESS STEPPER -->
+
+<section class="assessment-progress">
+
+    <div class="step active">
+        <div class="step-icon">
+            <i class="fa-solid fa-user"></i>
+        </div>
+        <span>Personal</span>
+    </div>
+
+    <div class="step-line"></div>
+
+    <div class="step">
+        <div class="step-icon">
+            <i class="fa-solid fa-heart-pulse"></i>
+        </div>
+        <span>Symptoms</span>
+    </div>
+
+    <div class="step-line"></div>
+
+    <div class="step">
+        <div class="step-icon">
+            <i class="fa-solid fa-stethoscope"></i>
+        </div>
+        <span>Measurements</span>
+    </div>
+
+    <div class="step-line"></div>
+
+    <div class="step">
+        <div class="step-icon">
+            <i class="fa-solid fa-chart-line"></i>
+        </div>
+        <span>Results</span>
+    </div>
+
+</section>
+
+<!-- HEARTGUARD AI ASSESSMENT FORM -->
+
+<section class="assessment-wrapper">
+
+    <div class="assessment-left">
+
+        <form class="assessment-form" id="predictionForm">
+            
+            <!--PERSONAL INFORMATION-->
+            
+            <div class="form-section glass-card">
+                <h3>
+                    <i class="fa-solid fa-user"></i>
+                    Personal Information
+                </h3>
+                
+                <div class="form-grid">
+                    
+                    <!-- AGE -->
+                    
+                    <div class="input-card">
+                        <label> Your Age </label>
+                        <p class="input-info"> Enter your current age in years. </p>
+                        <input
+                        type="number"
+                        name="age"
+                        placeholder="Example: 45"
+                        min="1"
+                        max="110"
+                        required
+                        >
+                    </div>
+            
+                    <!-- GENDER -->
+             
+                    <div class="input-card">
+                        <label> Gender </label>
+                        <p class="input-info"> Select your biological gender. </p>
+                        <select name="sex" required>
+                            <option value=""> Select Gender </option>
+                            <option value="Male"> Male </option>
+                            <option value="Female"> Female </option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            
+            <!--HEART SYMPTOMS-->
+            
+            <div class="form-section glass-card">
+                <h3>
+                    <i class="fa-solid fa-heart"></i>
+                    Heart Symptoms
+                </h3>
+                
+                <div class="form-grid">
+                    
+                    <!-- CHEST PAIN -->
+                     
+                    <div class="input-card">
+                        <label> Type of Chest Discomfort </label>
+                        <p class="input-info">
+                            Choose the option that best describes your symptoms.
+                        </p>
+                        <select name="cp" required>
+                            <option value=""> Select Chest Pain Type </option>
+                            <option value="typical angina"> Strong chest pain during physical activity </option>
+                            <option value="atypical angina"> Mild or unusual chest discomfort </option>
+                            <option value="non-anginal"> Chest pain not related to the heart </option>
+                            <option value="asymptomatic"> No noticeable chest pain </option>
+                        </select>
+                    </div>
+                    
+                    <!-- EXANG -->
+                     
+                    <div class="input-card">
+                        <label> Chest Pain During Exercise </label>
+                        <p class="input-info">
+                            Do you experience chest discomfort while exercising,
+                            climbing stairs, or walking quickly?
+                        </p>
+                        <select name="exang" required>
+                            <option value=""> Select Option </option>
+                            <option value="True"> Yes </option>
+                            <option value="False"> No </option>
+                        </select>
+                    </div>
+            
+                    <!-- OLDPEAK -->
+                     
+                    <div class="input-card">
+                        <label> Heart Stress During Exercise </label>
+                        <p class="input-info">
+                            Indicates changes in heart activity during physical exertion.
+                        </p>
+                        <input
+                        type="number"
+                        name="oldpeak"
+                        placeholder="Example: 1.5"
+                        step="0.1"
+                        min="0"
+                        max="10"
+                        required
+                        >
+                    </div>
+            
+                    <!-- SLOPE -->
+             
+                    <div class="input-card">
+                        <label> Heart Activity Pattern </label>
+                        <p class="input-info"> Represents how your heart responds during exercise testing. </p>
+                        <select name="slope" required>
+                            <option value=""> Select Pattern </option>
+                            <option value="upsloping"> Normal response </option>
+                            <option value="flat"> Moderate abnormality </option>
+                            <option value="downsloping"> High abnormality </option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+    
+            <!--MEDICAL MEASUREMENTS-->
+    
+            <div class="form-section glass-card">
+                <h3>
+                    <i class="fa-solid fa-stethoscope"></i>
+                    Medical Measurements
+                </h3>
+                
+                <div class="form-grid">
+                    
+                    <!-- BLOOD PRESSURE -->
+                     
+                    <div class="input-card">
+                        <label> Resting Blood Pressure </label>
+                        <p class="input-info"> Your blood pressure while resting. </p>
+                        <input
+                        type="number"
+                        name="trestbps"
+                        placeholder="Example: 120"
+                        min="50"
+                        max="250"
+                        required
+                        >
+                    </div>
+            
+                    <!-- CHOLESTEROL -->
+                     
+                    <div class="input-card">
+                        <label> Cholesterol Level </label>
+                        <p class="input-info"> Enter your cholesterol level from your medical report. </p>
+                        <input
+                        type="number"
+                        name="chol"
+                        placeholder="Example: 200"
+                        min="50"
+                        max="700"
+                        required
+                        >
+                    </div>
+
+                    <!-- BLOOD SUGAR -->
+             
+                    <div class="input-card">
+                        <label> Blood Sugar Level </label>
+                        <p class="input-info"> Is your fasting blood sugar higher than normal? </p>
+                        <select name="fbs" required>
+                            <option value=""> Select Option </option>
+                            <option value="True"> Yes </option>
+                            <option value="False"> No </option>
+                        </select>
+                    </div>
+                    
+                    <!-- HEART RATE -->
+                     
+                    <div class="input-card">
+                        <label> Maximum Heart Rate </label>
+                        <p class="input-info"> Highest heart rate achieved during physical activity. </p>
+                        <input
+                        type="number"
+                        name="thalch"
+                        placeholder="Example: 150"
+                        min="40"
+                        max="250"
+                        required
+                        >
+                    </div>
+                </div>
+            </div>
+            
+            <!-- ECG & CLINICAL RESULTS -->
+             
+            <div class="form-section glass-card">
+                <h3>
+                    <i class="fa-solid fa-wave-square"></i>
+                    ECG & Clinical Results
+                </h3>
+                
+                <div class="form-grid">
+                    
+                    <!-- REST ECG -->
+                     
+                    <div class="input-card">
+                        <label> ECG Result </label>
+                        <p class="input-info"> Electrocardiogram result from your medical examination. </p>
+                        <select name="restecg" required>
+                            <option value=""> Select ECG Result </option>
+                            <option value="normal"> Normal </option>
+                            <option value="st-t abnormality"> Minor heartbeat abnormality </option>
+                            <option value="lv hypertrophy"> Enlarged heart muscle indication </option>
+                        </select>
+                    </div>
+            
+                    <!-- CA -->
+             
+                    <div class="input-card">
+                        <label> Blood Vessel Condition </label>
+                        <p class="input-info"> Number of major blood vessels detected during heart scan. </p>
+                        <select name="ca" required>
+                            <option value=""> Select Option </option>
+                            <option value="0.0"> No affected vessels </option>
+                            <option value="1.0"> 1 affected vessel </option>
+                            <option value="2.0"> 2 affected vessels </option>
+                            <option value="3.0"> 3 affected vessels </option>
+                        </select>
+                    </div>
+            
+                    <!-- THAL -->
+             
+                    <div class="input-card">
+                        <label> Blood Flow Condition </label>
+                        <p class="input-info"> Result of blood circulation and oxygen flow testing. </p>
+                        <select name="thal" required>
+                            <option value=""> Select Result </option>
+                            <option value="normal"> Normal blood flow </option>
+                            <option value="fixed defect"> Permanent blood flow issue </option>
+                            <option value="reversable defect"> Temporary blood flow issue </option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <!-- BUTTON -->
+
+            <button class="predict-btn">
+                Analyze Cardiovascular Risk
+            </button>
+
+        </form>
+    </div>
+
+    <div class="assesment-right">
+
+        <div class="ai-side-panel">
+            <div class="panel-header">
+                <h3> AI Assessment Guide </h3>
+            </div>
+            
+            <div class="guide-item">
+                <span>✓</span>
+                <p> Enter accurate medical values. </p>
+            </div>
+            
+            <div class="guide-item">
+                <span>✓</span>
+                <p> AI evaluates 13 cardiovascular indicators. </p>
+            </div>
+            
+            <div class="guide-item">
+                <span>✓</span>
+                <p> Prediction is generated instantly. </p>
+            </div>
+            
+            <div class="guide-item">
+                <span>✓</span>
+                <p> Receive personalized recommendations. </p>
+            </div>
+            
+            <div class="confidence-box">
+                <h2>84.8%</h2>
+                <p> Model Accuracy </p>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<!-- FORM -->
+ 
+
+
+    </div>
+
+</section>
+
+<!-- ========================= -->
+<!-- AI LOADING SCREEN -->
+<!-- ========================= -->
+
+<div class="ai-loader" id="aiLoader">
+
+    <div class="loader-content">
+
+        <div class="scanner-ring"></div>
+
+        <div class="heart-pulse">
+            ❤️
+        </div>
+
+        <h2>HeartGuard AI Analysis</h2>
+
+        <p id="loadingText">
+            Analyzing cardiovascular patterns...
+        </p>
+
+    </div>
+
+</div>
+
+<!-- ========================= -->
+<!-- PREMIUM RESULT DASHBOARD -->
+<!-- ========================= -->
+
+<section class="premium-dashboard hidden" id="premiumDashboard">
+
+    <!-- Animated Background -->
+
+    <div class="dashboard-bg"></div>
+
+    <div class="premium-container">
+
+        <!-- HEADER -->
+
+        <div class="premium-header">
+
+            <div>
+                <h2>AI Cardiovascular Intelligence Report</h2>
+                <p>
+                    Advanced AI-powered heart health analytics & predictive insights
+                </p>
+            </div>
+
+            <button class="download-report-btn" id="downloadReport">
+                Download Report
+            </button>
+
+        </div>
+
+        <!-- TOP ANALYTICS GRID -->
+
+        <div class="analytics-grid">
+
+            <!-- RISK SCORE -->
+
+            <div class="premium-card risk-card-premium">
+
+                <div class="card-title">
+                    <h3>Overall Risk Score</h3>
+                    <span class="live-badge">LIVE AI</span>
+                </div>
+
+                <div class="risk-meter-wrapper">
+
+                    <div class="risk-ring">
+
+                        <svg width="260" height="260">
+
+                            <defs>
+
+                                <linearGradient id="riskGradient">
+
+                                    <stop offset="0%" stop-color="#34A0A4"/>
+                                    <stop offset="100%" stop-color="#184E77"/>
+
+                                </linearGradient>
+
+                            </defs>
+
+                            <circle class="meter-bg"
+                                cx="130"
+                                cy="130"
+                                r="105">
+                            </circle>
+
+                            <circle class="meter-progress"
+                                cx="130"
+                                cy="130"
+                                r="105">
+                            </circle>
+
+                        </svg>
+
+                        <div class="meter-content">
+
+                            <h1 id="premiumRisk">72%</h1>
+                            <p id="riskLevel">High Risk</p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div class="risk-stats">
+
+                    <div class="stat-box">
+                        <h4>Heart Rate</h4>
+                        <p>92 bpm</p>
+                    </div>
+
+                    <div class="stat-box">
+                        <h4>Blood Pressure</h4>
+                        <p>148/92</p>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- AI SUMMARY -->
+
+            <div class="premium-card ai-summary-card">
+
+                <div class="card-title">
+                    <h3>AI Clinical Summary</h3>
+                </div>
+
+                <div class="summary-alert" id="summaryAlert">
+                    Elevated Cardiovascular Risk Detected
+                </div>
+
+                <p class="summary-text" id="summaryText">
+
+                    Our AI engine identified abnormal cardiovascular patterns
+                    associated with elevated cholesterol, hypertension,
+                    and reduced physical activity. Early lifestyle
+                    modifications and medical consultation are strongly advised.
+
+                </p>
+
+                <div class="summary-progress">
+
+                    <div class="progress-item">
+
+                        <span>Stress Impact</span>
+
+                        <div class="progress-bar">
+                            <div class="fill stress"></div>
+                        </div>
+
+                    </div>
+
+                    <div class="progress-item">
+
+                        <span>Heart Health</span>
+
+                        <div class="progress-bar">
+                            <div class="fill heart"></div>
+                        </div>
+
+                    </div>
+
+                    <div class="progress-item">
+
+                        <span>Lifestyle Score</span>
+
+                        <div class="progress-bar">
+                            <div class="fill lifestyle"></div>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- HEALTH ANALYTICS -->
+
+        <div class="health-analytics-grid">
+
+            <div class="analytics-card">
+                <h4>Cholesterol</h4>
+                <h2>245</h2>
+                <span>Above Normal</span>
+            </div>
+
+            <div class="analytics-card">
+                <h4>BMI Index</h4>
+                <h2>29.1</h2>
+                <span>Overweight</span>
+            </div>
+
+            <div class="analytics-card">
+                <h4>Exercise Score</h4>
+                <h2>48%</h2>
+                <span>Needs Improvement</span>
+            </div>
+
+            <div class="analytics-card">
+                <h4>Sleep Quality</h4>
+                <h2>63%</h2>
+                <span>Moderate</span>
+            </div>
+
+        </div>
+
+        <!-- AI INSIGHTS -->
+
+        <div class="bottom-grid">
+
+            <!-- INSIGHTS -->
+
+            <div class="premium-card insights-panel">
+
+                <h3>AI Generated Insights</h3>
+
+                <div class="insight-item">
+                    <div class="dot red"></div>
+                    <p>Blood pressure levels are consistently elevated.</p>
+                </div>
+
+                <div class="insight-item">
+                    <div class="dot blue"></div>
+                    <p>Low physical activity is increasing cardiac stress.</p>
+                </div>
+
+                <div class="insight-item">
+                    <div class="dot green"></div>
+                    <p>Improved sleep patterns may reduce risk significantly.</p>
+                </div>
+
+                <div class="insight-item">
+                    <div class="dot yellow"></div>
+                    <p>Dietary optimization can lower cholesterol levels.</p>
+                </div>
+
+            </div>
+
+            <!-- RECOMMENDATIONS -->
+
+            <div class="premium-card recommendations-panel">
+
+                <h3>Recommended Action Plan</h3>
+
+                <ul id="recommendationList">
+
+                    <li>Follow a low sodium & low cholesterol diet</li>
+
+                    <li>Perform 30 mins of cardio exercise daily</li>
+
+                    <li>Reduce caffeine and processed sugar intake</li>
+
+                    <li>Track BP & heart rate weekly</li>
+
+                    <li>Improve sleep cycle consistency</li>
+
+                    <li>Consult a cardiologist for preventive screening</li>
+
+                </ul>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<script src="js/main.js"></script>
+
+</body>
+</html>

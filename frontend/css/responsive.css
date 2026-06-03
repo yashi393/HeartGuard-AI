@@ -1,0 +1,60 @@
+@media(max-width:1100px){
+
+  .hero{
+    flex-direction:column;
+    text-align:center;
+  }
+
+  .hero-left,
+  .hero-right{
+    width:100%;
+  }
+
+  .hero-left{
+    margin-bottom:60px;
+  }
+
+  .hero-buttons,
+  .stats-container{
+    justify-content:center;
+    flex-wrap:wrap;
+  }
+
+  .hero-left h1{
+    font-size:50px;
+  }
+
+}
+
+@media(max-width:768px){
+
+  .navbar{
+    flex-direction:column;
+    height:auto;
+    gap:20px;
+    padding:20px;
+  }
+
+  .nav-links{
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:20px;
+  }
+
+  .hero{
+    padding:180px 20px 80px;
+  }
+
+  .hero-left h1{
+    font-size:38px;
+  }
+
+  .hero-left p{
+    font-size:18px;
+  }
+
+  .heart-icon{
+    font-size:200px;
+  }
+
+}
